@@ -1,0 +1,46 @@
+C:\Users\Srinjoy\Downloads\GitDemo>
+
+C:\Users\Srinjoy\Downloads\GitDemo>echo "This is a log file" > test.log
+
+C:\Users\Srinjoy\Downloads\GitDemo>mkdir log
+
+C:\Users\Srinjoy\Downloads\GitDemo>echo "debug info" > log\debug.txt
+
+C:\Users\Srinjoy\Downloads\GitDemo>echo *.log > .gitignore
+
+C:\Users\Srinjoy\Downloads\GitDemo>echo log/ >> .gitignore
+
+C:\Users\Srinjoy\Downloads\GitDemo>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Srinjoy\Downloads\GitDemo>git add .gitignore
+
+C:\Users\Srinjoy\Downloads\GitDemo>git commit -m "Add .gitignore to ignore .log files and log folder"
+[master cbc39c4] Add .gitignore to ignore .log files and log folder
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+
+C:\Users\Srinjoy\Downloads\GitDemo>git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 326 bytes | 23.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/AllMightLegend/GitDemo.git
+   d37eaeb..cbc39c4  master -> master
+
+C:\Users\Srinjoy\Downloads\GitDemo>echo "new log" > another.log
+
+C:\Users\Srinjoy\Downloads\GitDemo>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
