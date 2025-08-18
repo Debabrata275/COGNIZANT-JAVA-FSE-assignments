@@ -1,0 +1,53 @@
+PS C:\Users\Srinjoy> cd Downloads/GitDemo
+PS C:\Users\Srinjoy\Downloads\GitDemo> git checkout master
+Already on 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+PS C:\Users\Srinjoy\Downloads\GitDemo> git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS C:\Users\Srinjoy\Downloads\GitDemo> git branch GitWork
+PS C:\Users\Srinjoy\Downloads\GitDemo> git checkout GitWork
+Switched to branch 'GitWork'
+PS C:\Users\Srinjoy\Downloads\GitDemo> echo "<message>Hello from branch</message>" > hello.xml
+PS C:\Users\Srinjoy\Downloads\GitDemo> git add hello.xml
+PS C:\Users\Srinjoy\Downloads\GitDemo> git commit -m "Add hello.xml in GitWork branch"
+[GitWork 28b6294] Add hello.xml in GitWork branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\Srinjoy\Downloads\GitDemo> git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+PS C:\Users\Srinjoy\Downloads\GitDemo> echo "<message>Hello from master</message>" > hello.xml
+PS C:\Users\Srinjoy\Downloads\GitDemo> git add hello.xml
+PS C:\Users\Srinjoy\Downloads\GitDemo> git commit -m "Add hello.xml in master with different content"
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+PS C:\Users\Srinjoy\Downloads\GitDemo> echo "<message>Hello from MASTER unique</message>" > hello.xml
+PS C:\Users\Srinjoy\Downloads\GitDemo> git add hello.xml
+PS C:\Users\Srinjoy\Downloads\GitDemo> git commit -m "Master: unique hello.xml content"
+[master 28fa161] Master: unique hello.xml content
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\Srinjoy\Downloads\GitDemo> git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 5 commits.
+  (use "git push" to publish your local commits)
+PS C:\Users\Srinjoy\Downloads\GitDemo> git merge GitWork
+warning: Cannot merge binary files: hello.xml (HEAD vs. GitWork)
+Auto-merging hello.xml
+CONFLICT (content): Merge conflict in hello.xml
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\Srinjoy\Downloads\GitDemo> notepad hello.xml
+PS C:\Users\Srinjoy\Downloads\GitDemo> git add hello.xml
+PS C:\Users\Srinjoy\Downloads\GitDemo> git commit -m "Resolved merge conflict in hello.xml"
+[master 832f78c] Resolved merge conflict in hello.xml
+PS C:\Users\Srinjoy\Downloads\GitDemo> echo *.bak >> .gitignore
+PS C:\Users\Srinjoy\Downloads\GitDemo> echo *~ >> .gitignore
+PS C:\Users\Srinjoy\Downloads\GitDemo> git add .gitignore
+PS C:\Users\Srinjoy\Downloads\GitDemo> git commit -m "Ignore backup files"
+[master 620652d] Ignore backup files
+ 1 file changed, 0 insertions(+), 0 deletions(-)
